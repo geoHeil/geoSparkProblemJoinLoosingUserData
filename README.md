@@ -38,19 +38,9 @@ it is empty
 |  B|  B|123|      [] |
 +---+---+---+---------+
 ```
+Unfortunately, so far I could not reproduce this with some hand drawn / made up data (yet). Still maybe you already had problems like that?
 
-i.e. the points
-```
-foo,16.52805721081677,47.850179651896994
-second,16.529602163209347,47.85023725039687
-```
-clearly should be contained in the multi polygon of 
-
-```
-POLYGON((16.5132943323988 47.85121641510742,16.523422353639035 47.83923477616023,16.558183782472042 47.84741484867311,16.558183782472042 47.86106463188969,16.53106128491345 47.865210689885984,16.52951633252087 47.85565122375945,16.516985052003292 47.857378968615265,16.5132943323988 47.85121641510742))
-```
-
-During the development of this minimal example I noticed in case of duplicate Points (still with different IDs) only a single one is joined
+During the development of this minimal example I noticed in case of duplicate Points (still with different IDs) only a single one is joined (if at all). How can this be explained?
 ```
 +---------+----------------+----------------+
 |       id|        latitude|       longitude|
@@ -83,4 +73,14 @@ join size 1
 +---------+---+-----------+
 |location2|456|[600000001]|
 +---------+---+-----------+
+```
+i.e. the points
+```
+foo,16.52805721081677,47.850179651896994
+second,16.529602163209347,47.85023725039687
+```
+clearly should be contained in the multi polygon of 
+
+```
+POLYGON((16.5132943323988 47.85121641510742,16.523422353639035 47.83923477616023,16.558183782472042 47.84741484867311,16.558183782472042 47.86106463188969,16.53106128491345 47.865210689885984,16.52951633252087 47.85565122375945,16.516985052003292 47.857378968615265,16.5132943323988 47.85121641510742))
 ```
