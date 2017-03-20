@@ -32,6 +32,10 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-sql" % spark % "provided",
   "org.apache.spark" %% "spark-hive" % spark % "provided",
   "org.datasyslab" % "geospark" % "0.5.2",
+  // to use magellan
+  // git clone https://github.com/harsha2010/magellan && cd magellan/
+  // sbt publishLocal
+  "harsha2010" %% "magellan" % "1.0.5-SNAPSHOT",
   "com.holdenkarau" % "spark-testing-base_2.11" % s"${spark}_0.6.0" % "test"
 )
 
