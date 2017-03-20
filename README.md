@@ -84,6 +84,14 @@ clearly should be contained in the multi polygon of
 ```
 POLYGON((16.5132943323988 47.85121641510742,16.523422353639035 47.83923477616023,16.558183782472042 47.84741484867311,16.558183782472042 47.86106463188969,16.53106128491345 47.865210689885984,16.52951633252087 47.85565122375945,16.516985052003292 47.857378968615265,16.5132943323988 47.85121641510742))
 ```
+
+but when manually altering the points i.e. just changing the last digit, then multiple fields are shown. This is not the desired behaviour, as for me the labels should be taken into consideration when deciding on uniqueness of the points.
+
+```
+5.4588922996669,5.4588922996669
+5.4588922996668,5.4588922996668
+5.4588922996667,5.4588922996667
+```
 # magellan comparison
 
 whereas geospark will find atleast a single join, magellan will return no joins at all. What is wrong here?
