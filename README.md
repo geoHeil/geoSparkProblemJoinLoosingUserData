@@ -38,7 +38,18 @@ it is empty
 |  B|  B|123|      [] |
 +---+---+---+---------+
 ```
-Unfortunately, so far I could not reproduce this with some hand drawn / made up data (yet). Still maybe you already had problems like that?
+
+~~Unfortunately, so far I could not reproduce this with some hand drawn / made up data (yet). Still maybe you already had problems like that?~~
+I finally found the solution: I am using more than a thousand points (1001)!
+Then below is the result. If I am using 1000 points, then nothing is joined.
+```
++---------+-------+--------------------+
+|      id1|idValue|           wktString|
++---------+-------+--------------------+
+|location2|    456|POLYGON ((0.45889...|
+|handDrawn|    -55|POLYGON((16.51329...|
++---------+-------+--------------------+
+```
 
 During the development of this minimal example I noticed in case of duplicate Points (still with different IDs) only a single one is joined (if at all). How can this be explained?
 ```

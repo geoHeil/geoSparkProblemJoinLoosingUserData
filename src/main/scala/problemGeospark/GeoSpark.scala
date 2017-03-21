@@ -24,6 +24,8 @@ object GeoSpark extends App {
     .setAppName("geomesaSparkInMemory")
     .setMaster("local[*]")
     .set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
+    .set("spark.default.parallelism", "12")
+    .set("spark.driver.memory", "11G") // use a high value in case of single node mode
 
   val spark: SparkSession = SparkSession
     .builder()
@@ -73,7 +75,7 @@ object GeoSpark extends App {
   //  val joinResultWithDuplicates = cogroupResult.flatMapToPair(new GeometryByPolygonJudgementUsingIndex())
   //  val joinListResultAfterAggregation = DuplicatesHandler.removeDuplicatesGeometryByPolygon(joinResultWithDuplicates)
 
-  // TODO convert to scala
+  // TODO convert to scala to debug
   //  val castedResult = joinListResultAfterAggregation.mapValues(new Function[java.util.HashSet[Geometry], java.util.HashSet[Point]]() {
   //    def call(spatialObjects: java.util.HashSet[Geometry]): java.util.HashSet[Point] = {
   //      val castedSpatialObjects = new java.util.HashSet[Point]
